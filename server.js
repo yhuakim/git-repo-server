@@ -87,5 +87,5 @@ const server = https.createServer((req, res) => {
 const PORT = process.env.PORT || 5000
 
 server.listen(PORT, hostname, ()=> {
-    console.log(`server started at ${PORT}`)
+    console.log(`server started at ${hostname}: ${PORT}`)
 })
