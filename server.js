@@ -84,6 +84,6 @@ const server = http.createServer((req, res) => {
     }
 });
 
-server.listen(3000, hostname, ()=> {
+server.listen(process.env.PORT, hostname, ()=> {
     console.log('server started at localhost:3000')
 })
