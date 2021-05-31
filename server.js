@@ -4,9 +4,6 @@ const fetch = require('node-fetch')
 const hostname = '0.0.0.0'
 
 const server = https.createServer((req, res) => {
-    res.setHeader('Content-Type', 'text/plain')
-    res.end('welcome')
-
     const method = req.method
     const current_url = new URL(req.url, 'https://git-repo-server.herokuapp.com');
     const pathname = current_url.pathname
@@ -18,8 +15,6 @@ const server = https.createServer((req, res) => {
         const githubURL = 'https://api.github.com/graphql'
 
         res.setHeader('Access-Control-Allow-Origin', '*')
-        
-        console.log(req.headers)
 
         const query =`
             query {
