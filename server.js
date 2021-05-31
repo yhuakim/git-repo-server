@@ -10,6 +10,13 @@ const server = https.createServer((req, res) => {
     const search_params = current_url.searchParams
     let username = search_params.get('username')
 
+    if(method === 'GET' && pathname === '/') {
+        res.writeHead(200, {
+            'Content-Type': 'text/html'
+        })
+
+        res.end('Welcome to my github clone')
+    }
 
     if(method === 'GET' && pathname === '/repos' && search_params.has('username')) {
         const githubURL = 'https://api.github.com/graphql'
