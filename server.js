@@ -1,7 +1,7 @@
 const https = require('https');
 const url = require('url')
 const fetch = require('node-fetch')
-const hostname = '127.0.0.1'
+const hostname = '0.0.0.0'
 
 const server = https.createServer((req, res) => {
     res.setHeader('Content-Type', 'text/plain')
