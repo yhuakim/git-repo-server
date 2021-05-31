@@ -4,7 +4,7 @@ const fetch = require('node-fetch')
 const hostname ='localhost'
 
 const server = http.createServer((req, res) => {
-    
+    res.setHeader('Content-Type', 'text/plain')
     res.end('welcome')
 
     const method = req.method
