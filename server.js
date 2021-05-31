@@ -4,11 +4,15 @@ const fetch = require('node-fetch')
 const hostname ='localhost'
 
 const server = http.createServer((req, res) => {
+    
+    res.end('welcome')
+
     const method = req.method
     const current_url = new URL(req.url, 'https://git-repo-server.herokuapp.com');
     const pathname = current_url.pathname
     const search_params = current_url.searchParams
     let username = search_params.get('username')
+
 
     if(method === 'GET' && pathname === '/repos' && search_params.has('username')) {
         const githubURL = 'https://api.github.com/graphql'
