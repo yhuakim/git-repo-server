@@ -1,7 +1,7 @@
 const http = require('http');
 const url = require('url')
 const fetch = require('node-fetch')
-const hostname ='localhost'
+const hostname = '127.0.0.1'
 
 const server = http.createServer((req, res) => {
     res.setHeader('Content-Type', 'text/plain')
@@ -84,6 +84,8 @@ const server = http.createServer((req, res) => {
     }
 });
 
-server.listen(process.env.PORT, hostname, ()=> {
-    console.log('server started at localhost:3000')
+const PORT = process.env.PORT || 5000
+
+server.listen(PORT, hostname, ()=> {
+    console.log(`server started at ${PORT}`)
 })
