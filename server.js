@@ -5,7 +5,7 @@ const hostname ='localhost'
 
 const server = http.createServer((req, res) => {
     const method = req.method
-    const current_url = new URL(req.url, 'http://localhost:3000');
+    const current_url = new URL(req.url, 'https://git-repo-server.herokuapp.com');
     const pathname = current_url.pathname
     const search_params = current_url.searchParams
     let username = search_params.get('username')
