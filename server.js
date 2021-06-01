@@ -73,7 +73,7 @@ const server = https.createServer((req, res) => {
        fetch(githubURL, {
                 method: 'POST',
                 headers: {
-                    Authorization: `Bearer ${process.env.TOKEN}`,
+                    Authorization: `Bearer ${TOKEN}`,
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({query})
